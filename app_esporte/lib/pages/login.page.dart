@@ -1,3 +1,8 @@
+// ignore_for_file: deprecated_member_use
+
+import 'package:app_esporte/pages/HomePage.dart';
+import 'package:app_esporte/pages/reset-password.page.dart';
+import 'package:app_esporte/pages/signup.page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -11,48 +16,131 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.black,
-        body: Padding(
-          padding: EdgeInsets.all(100),
-          child: Center(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                TextFormField(
-                  autofocus: true,
-                  keyboardType: TextInputType.number,
-                  style: new TextStyle(color: Colors.white, fontSize: 20),
-                  decoration: InputDecoration(
-                      labelText: 'CPF',
-                      labelStyle: TextStyle(color: Colors.white)),
-                ),
-                Divider(),
-                TextFormField(
-                  obscureText: true,
-                  autofocus: true,
-                  keyboardType: TextInputType.text,
-                  style: new TextStyle(color: Colors.white, fontSize: 20),
-                  decoration: InputDecoration(
-                      labelText: 'Senha',
-                      labelStyle: TextStyle(color: Colors.white)),
-                ),
-                Divider(),
-                ButtonTheme(
-                  height: 60.0,
-                  minWidth: 60.0,
-                  child: RaisedButton(
-                    onPressed: () => {},
-                    child: Text(
-                      "Entrar",
-                      style: TextStyle(color: Colors.black),
-                    ),
-                    color: Colors.white,
-                  ),
-                )
-              ],
+      body: Container(
+        padding: const EdgeInsets.only(top: 60, left: 40, right: 40),
+        color: Colors.white,
+        child: ListView(
+          children: [
+            SizedBox(
+              width: 128,
+              height: 128,
+              child: Image.asset("assets/logo.png"),
             ),
-          ),
-        ));
+            const SizedBox(
+              height: 30,
+            ),
+            TextFormField(
+              autofocus: true,
+              keyboardType: TextInputType.emailAddress,
+              decoration: const InputDecoration(
+                labelText: "E-mail",
+                labelStyle: TextStyle(
+                  color: Colors.black38,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 20,
+                ),
+              ),
+              style: const TextStyle(fontSize: 20),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            TextFormField(
+              autofocus: true,
+              keyboardType: TextInputType.text,
+              obscureText: true,
+              decoration: const InputDecoration(
+                labelText: "Senha",
+                labelStyle: TextStyle(
+                  color: Colors.black38,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 20,
+                ),
+              ),
+              style: const TextStyle(fontSize: 20),
+            ),
+            Container(
+              height: 40,
+              alignment: Alignment.centerRight,
+              child: FlatButton(
+                child: const Text(
+                  "Recuperar senha",
+                  textAlign: TextAlign.right,
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ResetPasswordPage(),
+                    ),
+                  );
+                },
+              ),
+            ),
+            const SizedBox(
+              height: 40,
+            ),
+            Container(
+              height: 60,
+              alignment: Alignment.centerLeft,
+              decoration: const BoxDecoration(
+                color: Colors.blue,
+                borderRadius: BorderRadius.all(Radius.circular(5)),
+              ),
+              child: SizedBox.expand(
+                child: FlatButton(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    // ignore: prefer_const_literals_to_create_immutables
+                    children: [
+                      const Text(
+                        "Login",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 20,
+                        ),
+                        textAlign: TextAlign.left,
+                      ),
+                    ],
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const HomePage(),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            SizedBox(
+              height: 40,
+              child: FlatButton(
+                child: const Text(
+                  "Cadastre-se",
+                  textAlign: TextAlign.center,
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SignupPage(),
+                    ),
+                  );
+                },
+              ),
+            )
+          ],
+        ),
+      ),
+    );
   }
 }

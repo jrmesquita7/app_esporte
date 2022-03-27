@@ -1,0 +1,29 @@
+{
+    // Use o IntelliSense para saber mais sobre os atributos possíveis.
+    // Focalizar para exibir as descrições dos atributos existentes.
+    // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "app_esporte",
+            "cwd": "app_esporte",
+            "request": "launch",
+            "type": "dart"
+            "program": "lib/main.dart"
+        },
+        {
+            "name": "app_esporte (profile mode)",
+            "cwd": "app_esporte",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "app_esporte (release mode)",
+            "cwd": "app_esporte",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
