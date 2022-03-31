@@ -33,7 +33,7 @@ class _LoginPageState extends State<LoginPage> {
               autofocus: true,
               keyboardType: TextInputType.emailAddress,
               decoration: const InputDecoration(
-                labelText: "E-mail",
+                labelText: "Usuário",
                 labelStyle: TextStyle(
                   color: Colors.black38,
                   fontWeight: FontWeight.w400,
@@ -84,7 +84,7 @@ class _LoginPageState extends State<LoginPage> {
               height: 60,
               alignment: Alignment.centerLeft,
               decoration: const BoxDecoration(
-                color: Colors.blue,
+                color: Color.fromARGB(255, 29, 62, 88),
                 borderRadius: BorderRadius.all(Radius.circular(5)),
               ),
               child: SizedBox.expand(
@@ -94,7 +94,7 @@ class _LoginPageState extends State<LoginPage> {
                     // ignore: prefer_const_literals_to_create_immutables
                     children: [
                       const Text(
-                        "Login",
+                        "Entrar",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white,

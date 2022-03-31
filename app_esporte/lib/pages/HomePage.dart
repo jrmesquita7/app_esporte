@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage> {
  caixa(String text){
    return Container(
      padding: const EdgeInsets.only(top: 10, left: 20, right: 20, bottom: 10),
-     color: Color.fromARGB(255, 159, 177, 207), 
+     color: const Color.fromARGB(255, 159, 177, 207), 
      child: Row(
        mainAxisAlignment: MainAxisAlignment.spaceBetween,
        children: [

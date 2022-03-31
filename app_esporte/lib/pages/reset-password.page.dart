@@ -9,7 +9,7 @@ class ResetPasswordPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+       backgroundColor: const Color.fromARGB(255, 30, 62, 88),
         automaticallyImplyLeading: true,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
@@ -25,11 +25,11 @@ class ResetPasswordPage extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                // SizedBox(
-                //   width: 100,
-                //   height: 100,
-                //   child: Image.asset("assets/- assets/reset-password-icon.png"),
-                // ),
+                SizedBox(
+                  width: 100,
+                  height: 100,
+                  child: Image.asset('assets/reset-password-icon.png'),
+                ),
                 const SizedBox(
                   height: 20,
                 ),
@@ -76,7 +76,7 @@ class ResetPasswordPage extends StatelessWidget {
                     height: 60,
                     alignment: Alignment.center,
                     decoration: const BoxDecoration(
-                      color: Colors.blue,
+                      color: Color.fromARGB(255, 30, 58, 82),
                       borderRadius: BorderRadius.all(
                         Radius.circular(5),
                       ),
