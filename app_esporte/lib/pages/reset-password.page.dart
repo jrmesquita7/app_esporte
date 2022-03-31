@@ -25,11 +25,11 @@ class ResetPasswordPage extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                SizedBox(
-                  width: 100,
-                  height: 100,
-                  child: Image.asset("assets/- assets/reset-password-icon.png"),
-                ),
+                // SizedBox(
+                //   width: 100,
+                //   height: 100,
+                //   child: Image.asset("assets/- assets/reset-password-icon.png"),
+                // ),
                 const SizedBox(
                   height: 20,
                 ),
