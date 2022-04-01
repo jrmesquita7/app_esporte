@@ -10,7 +10,7 @@ class HomePage extends StatefulWidget {
   @override
   State<HomePage> createState() => _HomePageState();
 }
-
+int user = 0;
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
@@ -54,11 +54,7 @@ class _HomePageState extends State<HomePage> {
           
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
-        onPressed: (){},
-        ),
-      
+    floatingActionButton: botao(1)
     );
   }
 
@@ -88,5 +84,14 @@ class _HomePageState extends State<HomePage> {
       ),
     );
 
+ }
+
+ botao(int user){
+   if (user == 1){
+     return FloatingActionButton(
+        child: const Icon(Icons.add),
+        onPressed: (){},
+        );
+   }
  }
 }
