@@ -19,10 +19,11 @@ class _HomePageState extends State<HomePage> {
         actions: [
           IconButton(icon: const Icon(Icons.search),
           onPressed: (){},),
-          IconButton(icon: const Icon(Icons.more_vert),
+          IconButton(icon: const Icon(Icons.account_circle),
           onPressed: (){},)
         ],
-        title: const Text('Camp SLP',
+        centerTitle: true,
+        title: const Text('SLPcamp',
         textAlign: TextAlign.center,
         style: TextStyle(
           fontSize: 20,
@@ -38,61 +39,54 @@ class _HomePageState extends State<HomePage> {
             color: const Color.fromARGB(255, 30, 62, 88),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children:[
-                ElevatedButton( 
-                child: const Text('Home'),
-                onPressed: (){},),
-                ElevatedButton( 
-                child: const Text('Notícias'),
-                onPressed: (){},),
-                ElevatedButton( 
-                child: const Text('Torneios'),
-                onPressed: (){},),
-                ElevatedButton( 
-                child: const Text('Inscrição'),
-                onPressed: (){},)
+              children:const [
+                Text("Campeonatos em andamento",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold
+                ),),
               ],
             ),
           ),
-          // Container(
-          //   padding: const EdgeInsets.only(top: 20, left: 10),
-          //   child: const Text(
-          //     'Campeonatos em andamento:',
-          //     style: TextStyle(
-          //       fontSize: 16,
-          //       fontWeight: FontWeight.bold
-          //     ),
-          //   ),
-          // ),
-  
+          caixa('Campeonato de Futsal sub 19','14/09/14'),
+          caixa('Campeonato de Vôlei ','14/09/14')
+          
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add),
+        onPressed: (){},
+        ),
       
     );
   }
 
- caixa(String text){
-   return Container(
-     padding: const EdgeInsets.only(top: 10, left: 20, right: 20, bottom: 10),
-     color: const Color.fromARGB(255, 159, 177, 207), 
-     child: Row(
-       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-       children: [
-         Text(text,
-         style: const TextStyle(
-           fontSize: 15,
-           fontWeight: FontWeight.bold
-
-         ),
-         ),
-         TextButton(
-         child: const Text('Inscrever Time'),
-         onPressed: (){},
-       ),
-       ],
-     )
-   );
-
+ caixa(String text, String text2){
+    return Center(
+      child: Card(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+              ListTile(
+              leading: Icon(Icons.album),
+              title: Text(text),
+              subtitle: Text(text2),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                TextButton(
+                  child: const Text('Inscrever-se'),
+                  onPressed: () {/* ... */},
+                ),
+                const SizedBox(width: 8),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
 
  }
 }

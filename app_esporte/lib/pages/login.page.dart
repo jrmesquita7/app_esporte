@@ -121,23 +121,6 @@ class _LoginPageState extends State<LoginPage> {
             const SizedBox(
               height: 10,
             ),
-            SizedBox(
-              height: 40,
-              child: FlatButton(
-                child: const Text(
-                  "Cadastre-se",
-                  textAlign: TextAlign.center,
-                ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const SignupPage(),
-                    ),
-                  );
-                },
-              ),
-            )
           ],
         ),
       ),
