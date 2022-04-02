@@ -1,6 +1,6 @@
 // ignore_for_file: deprecated_member_use
 
-import 'package:app_esporte/pages/HomePage.dart';
+import 'package:app_esporte/pages/homePage.dart';
 import 'package:app_esporte/pages/reset-password.page.dart';
 import 'package:app_esporte/pages/signup.page.dart';
 import 'package:flutter/material.dart';
@@ -108,7 +108,7 @@ class _LoginPageState extends State<LoginPage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => HomePage(),
+                        builder: (context) => const HomePage(),
                       ),
                     );
                   },
