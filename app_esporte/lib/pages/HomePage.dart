@@ -1,71 +1,88 @@
-// ignore_for_file: deprecated_member_use
-
-
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage
-({ Key? key }) : super(key: key);
+class HomePage extends StatelessWidget {
+
+  static const String _title = 'Flutter Code Sample';
+
+  const HomePage({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      title: _title,
+      home: MyStatelessWidget(),
+    );
+  }
 }
-int user = 0;
-class _HomePageState extends State<HomePage> {
+
+class MyStatelessWidget extends StatelessWidget {
+  const MyStatelessWidget({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        actions: [
+    return DefaultTabController(
+      initialIndex: 1,
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          actions: [
           IconButton(icon: const Icon(Icons.search),
           onPressed: (){},),
           IconButton(icon: const Icon(Icons.account_circle),
           onPressed: (){},)
         ],
-        centerTitle: true,
-        title: const Text('SLPcamp',
+          title: const Text('SLPcamp',
         textAlign: TextAlign.center,
         style: TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.bold
         ),),
-        backgroundColor: const Color.fromARGB(255, 30, 62, 88),
-      ),
-      body: ListView(
-        children: [
-          Container(
-            height: 80,
-            width: 80,
-            color: const Color.fromARGB(255, 30, 62, 88),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children:const [
-                Text("Campeonatos em andamento",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold
-                ),),
+          centerTitle: true,
+          bottom: const TabBar(
+            tabs: <Widget>[
+              Tab(
+                icon: Icon(Icons.home_filled),
+                text: "Home",
+              ),
+              Tab(
+                icon: Icon(Icons.sports_esports),
+                text: "Torneios",
+              ),
+            ],
+          ),
+          backgroundColor: const Color.fromARGB(255, 30, 62, 88),
+        ),
+        body: TabBarView(
+          children: <Widget>[
+            ListView(
+              children: [
+                caixa("Campeonato de futsal sub 15", "15/02/2021 a 25/02/2021 "),
+                caixa("Campeonato de futsal sub 19", "15/02/2021 a 25/02/2021 "),
+                caixa("Campeonato de campo sub 15", "15/02/2021 a 25/02/2021 "),
+                caixa("Campeonato de campo sub 19", "15/02/2021 a 25/02/2021 "),
+                caixa("Campeonato de vôlei sub 15", "15/02/2021 a 25/02/2021 "),
+                caixa("Campeonato de vôlei sub 19", "15/02/2021 a 25/02/2021 "),
+                caixa("Campeonato de vôlei sub 15", "15/02/2021 a 25/02/2021 "),
+                const Divider(),
+                botao(1)
               ],
             ),
-          ),
-          caixa('Campeonato de Futsal sub 19','14/09/14'),
-          caixa('Campeonato de Vôlei ','14/09/14')
-          
-        ],
+            const Center(
+              child: Text("It's rainy here"),
+            ),
+          ],
+        ),
       ),
-    floatingActionButton: botao(1)
     );
   }
-
- caixa(String text, String text2){
+  caixa(String text, String text2){
     return Center(
       child: Card(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
               ListTile(
-              leading: Icon(Icons.album),
+              leading: const Icon(Icons.album),
               title: Text(text),
               subtitle: Text(text2),
             ),
@@ -73,7 +90,7 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
                 TextButton(
-                  child: const Text('Inscrever-se'),
+                  child: const Text('Cadastrar'),
                   onPressed: () {/* ... */},
                 ),
                 const SizedBox(width: 8),
@@ -89,6 +106,7 @@ class _HomePageState extends State<HomePage> {
  botao(int user){
    if (user == 1){
      return FloatingActionButton(
+       backgroundColor: const Color.fromARGB(255, 30, 62, 88),
         child: const Icon(Icons.add),
         onPressed: (){},
         );

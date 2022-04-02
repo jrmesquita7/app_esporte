@@ -24,7 +24,7 @@ class _LoginPageState extends State<LoginPage> {
             SizedBox(
               width: 128,
               height: 128,
-              child: Image.asset("assets/logo.png"),
+              child: Image.asset("assets/logo.jpeg"),
             ),
             const SizedBox(
               height: 30,
@@ -108,7 +108,7 @@ class _LoginPageState extends State<LoginPage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const HomePage(),
+                        builder: (context) => HomePage(),
                       ),
                     );
                   },
