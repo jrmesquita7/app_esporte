@@ -35,74 +35,20 @@ class _FichaInscricaoState extends State<FichaInscricao> {
       body: ListView(
         padding: const EdgeInsets.all(30),
         children: [
-          Form(
-              child: TextFormField(
-            style: const TextStyle(fontSize: 15),
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'Nome completo',
-            ),
-          )),
-          const Divider(),
+          formulario("Nome Completo"),
+          formulario2(formulario("Nascimento"), "Masculino", "Femenino"),
           Row(
             children: [
               Expanded(
-                child: Form(
-                    child: TextFormField(
-                  style: const TextStyle(fontSize: 15),
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Nascimento',
-                  ),
-                )),
-              ),
-              Radio(
-                  value: 1,
-                  groupValue: value1,
-                  onChanged: (value) {
-                    setState(() {
-                      value1 = value.hashCode;
-                    });
-                  }),
-              const Text("Masculino"),
-              Radio(
-                  value: 2,
-                  groupValue: value1,
-                  onChanged: (value) {
-                    setState(() {
-                      value1 = value.hashCode;
-                    });
-                  }),
-              const Text("Femenino"),
-            ],
-          ),
-          const Divider(),
-          Row(
-            children: [
-              Expanded(
-                child: Form(
-                    child: TextFormField(
-                  style: const TextStyle(fontSize: 15),
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Peso',
-                  ),
-                )),
+                child: formulario("Peso"),
               ),
               Expanded(
-                child: Form(
-                    child: TextFormField(
-                  style: const TextStyle(fontSize: 15),
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Altura',
-                  ),
-                )),
+                child: formulario("Altura"),
               )
             ],
           ),
-          const Divider(),
-          Row(
+          Padding(padding: const EdgeInsets.only(top: 10, left: 5, right: 5, bottom: 10),
+          child: Row(
             children: [
               const Text(
                 "PdD:",
@@ -136,7 +82,7 @@ class _FichaInscricaoState extends State<FichaInscricao> {
                   }),
               const Text("Física")
             ],
-          ),
+          ),),
           Row(
             children: [
               Radio(
@@ -169,10 +115,10 @@ class _FichaInscricaoState extends State<FichaInscricao> {
             ],
           ),
           const Divider(),
-          Row(
+          Padding(padding: const EdgeInsets.only(top: 10, left: 5, right: 5, bottom: 10),
+          child: Row(
             children: [
-              const Text("Remédio controlado:",
-              style: TextStyle(fontSize: 15)),
+              const Text("Remédio controlado:", style: TextStyle(fontSize: 15)),
               Radio(
                   value: 1,
                   groupValue: value3,
@@ -190,125 +136,94 @@ class _FichaInscricaoState extends State<FichaInscricao> {
                       value3 = value.hashCode;
                     });
                   }),
-              const Text("Não")
+              const Text("Não"),
+              const Divider()
             ],
-          ),
-          const Divider(),
-          Form(
-              child: TextFormField(
-            style: const TextStyle(fontSize: 15),
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'Pai',
-            ),
-          )),
-          const Divider(),
-          Form(
-              child: TextFormField(
-            style: const TextStyle(fontSize: 15),
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'Mãe',
-            ),
-          )),
-          const Divider(),
-          Form(
-              child: TextFormField(
-            style: const TextStyle(fontSize: 15),
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'Rua',
-            ),
-          )),
-          const Divider(),
-          Form(
-              child: TextFormField(
-            style: const TextStyle(fontSize: 15),
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'Bairro',
-            ),
-          )),
-          const Divider(),
+          ),),
+          formulario("Pai"),
+          formulario("Mãe"),
+          formulario("Rua"),
+          formulario("Bairro"),
           Row(
             children: [
               Expanded(
-            child: Form(
-              child: TextFormField(
-            style: const TextStyle(fontSize: 15),
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'Município',
-            ),
-          )),),
-          Expanded(
-            child: Form(
-              child: TextFormField(
-            style: const TextStyle(fontSize: 15),
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'UF',
-            ),
-          )),)
+                child: formulario("Município"),
+              ),
+              Expanded(
+                child: formulario("UF"),
+              )
             ],
           ),
-          const Divider(),
           Row(
             children: [
               Expanded(
-            child: Form(
-              child: TextFormField(
-            style: const TextStyle(fontSize: 15),
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'Telefone',
-            ),
-          )),),
-          Expanded(
-            child: Form(
-              child: TextFormField(
-            style: const TextStyle(fontSize: 15),
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'CEP',
-            ),
-          )),)
+                child: formulario("Telefone"),
+              ),
+              Expanded(
+                child: formulario("CEP"),
+              )
             ],
           ),
-          const Divider(),
-          Form(
-              child: TextFormField(
-            style: const TextStyle(fontSize: 15),
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'Escola',
-            ),
-          )),
-          const Divider(),
+          formulario("Escola"),
           Row(
             children: [
               Expanded(
-            child: Form(
-              child: TextFormField(
-            style: const TextStyle(fontSize: 15),
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'Turno',
-            ),
-          )),),
-          Expanded(
-            child: Form(
-              child: TextFormField(
-            style: const TextStyle(fontSize: 15),
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'Ano',
-            ),
-          )),)
+                child: formulario("Turno"),
+              ),
+              Expanded(
+                child: formulario("Ano"),
+              )
             ],
           ),
+          formulario("Campeonato"),
+          formulario("Nome do Time")
         ],
       ),
     );
+  }
+
+  formulario3(Widget formu){
+
+  }
+
+  formulario2(Widget formu, String text, String text2, {int? valor}) {
+    return Padding(
+        padding: const EdgeInsets.only(top: 10, left: 5, right: 5, bottom: 10),
+        child: Row(
+          children: [
+            Expanded(
+              child: formu,
+            ),
+            Radio(
+                value: 1,
+                groupValue: value1,
+                onChanged: (value) {
+                  setState(() {
+                    value1 = value.hashCode;
+                  });
+                }),
+            Text(text.toString()),
+            Radio(
+                value: 2,
+                groupValue: value1,
+                onChanged: (value) {
+                  setState(() {
+                    value1 = value.hashCode;
+                  });
+                }),
+            Text(text2.toString()),
+          ],
+        ));
+  }
+
+  formulario(String text) {
+    return Padding(
+        padding: const EdgeInsets.only(top: 10, left: 5, right: 5, bottom: 10),
+        child: Form(
+            child: TextFormField(
+          style: const TextStyle(fontSize: 15),
+          decoration: InputDecoration(
+              border: const OutlineInputBorder(), labelText: text),
+        )));
   }
 }
