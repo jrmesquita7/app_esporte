@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "782550138096",
+    "project_id": "appesporte-9e631",
+    "storage_bucket": "appesporte-9e631.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:782550138096:android:f726d705ffabede9b61635",
+        "android_client_info": {
+          "package_name": "com.example.app_esporte"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "782550138096-gc8q7rf1vafj9enk28uonn7c3av2e2el.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCR6iEXdfHTDrh1SYRZzjZ3twKgI1ALkUU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "782550138096-gc8q7rf1vafj9enk28uonn7c3av2e2el.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

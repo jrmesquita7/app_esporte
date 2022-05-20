@@ -143,8 +143,8 @@ class _FichaInscricaoState extends State<FichaInscricao> {
           formulario("Pai"),
           formulario("Mãe"),
           formulario("Rua"),
-          formulario("Título"),
           formulario("Bairro"),
+          formulario("Título"),
           Row(
             children: [
               Expanded(
